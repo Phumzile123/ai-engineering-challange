@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexEra AI Engineering Challenge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>NexEra AI Engineering Challenge</h1>
+    <p>Two AI-powered interactive prototypes: 3D Asset Pipeline and Natural Language Avatar Animation</p>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="assetTab">Prototype 1: AI → 3D Asset</button>
+    <button class="tab-btn" data-tab="avatarTab">Prototype 2: NL → Avatar Animation</button>
+  </nav>
+
+  <main>
+    <!-- PROTOTYPE 1 -->
+    <section id="assetTab" class="tab-content active">
+      <div class="panel">
+        <h2>Prototype 1: AI-Generated 3D Asset Pipeline</h2>
+        <p>
+          Enter an object description or upload an image. The system retrieves a matching 3D model,
+          prepares it for viewing, and shows an educational explanation.
+        </p>
+
+        <div class="controls">
+          <label for="assetPrompt">Describe an object</label>
+          <input id="assetPrompt" type="text" placeholder="e.g. a yellow hard hat" />
+
+          <label for="assetImage">Or upload an image</label>
+          <input id="assetImage" type="file" accept="image/*" />
+
+          <button id="generateAssetBtn">Generate / Retrieve 3D Asset</button>
+        </div>
+
+        <div class="result-box">
+          <h3>Detected / Selected Asset</h3>
+          <p id="assetName">No asset selected yet.</p>
+          <p id="assetSummary">Educational summary will appear here.</p>
+        </div>
+
+        <div id="viewer1" class="viewer"></div>
+      </div>
+    </section>
+
+    <!-- PROTOTYPE 2 -->
+    <section id="avatarTab" class="tab-content">
+      <div class="panel">
+        <h2>Prototype 2: Natural Language → Avatar Animation</h2>
+        <p>
+          Type a command like “walk”, “wave hello”, “point”, or “show safety posture”.
+          The system interprets the meaning and plays a matching avatar behaviour.
+        </p>
+
+        <div class="controls">
+          <label for="avatarCommand">Enter avatar command</label>
+          <input id="avatarCommand" type="text" placeholder="e.g. wave hello to the learner" />
+          <button id="runCommandBtn">Run Command</button>
+        </div>
+
+        <div class="result-box">
+          <h3>AI Interpretation</h3>
+          <p id="avatarIntent">Intent will appear here.</p>
+          <p id="avatarExplanation">Explanation will appear here.</p>
+        </div>
+
+        <div id="viewer2" class="viewer"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built for the NexEra one-week AI engineering challenge.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
